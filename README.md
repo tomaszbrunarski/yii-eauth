@@ -1,3 +1,5 @@
+NOTE! This is just a fork of a project from https://github.com/Nodge/yii-eauth for the facebook oauth problem with the access token being returned as json rather then as before.
+===================
 Yii EAuth extension
 ===================
 
