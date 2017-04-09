@@ -1,5 +1,5 @@
 {
-    "name": "daxpresents/yii-eauth",
+    "name": "tomaszbrunarski/yii-eauth",
     "description": "My Fork (fixing json encoded facebook token ) of Nodge/yii-eauth EAuth extension allows to authenticate users by the OpenID, OAuth 1.0 and OAuth 2.0 providers.",
     "minimum-stability": "stable",
     "authors": [
