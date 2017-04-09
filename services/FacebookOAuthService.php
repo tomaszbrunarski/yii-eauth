@@ -93,7 +93,7 @@ class FacebookOAuthService extends EOAuth2Service {
      * @return mixed
      */
     protected function tokenFromJson($token){
-        return json_decode($token);
+        return json_decode($token,true);
     }
 	/**
 	 * Save access token to the session.
