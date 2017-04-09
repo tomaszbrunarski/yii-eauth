@@ -64,16 +64,37 @@ class FacebookOAuthService extends EOAuth2Service {
 		return $url;
 	}
 
-	protected function getTokenUrl($code) {
+    /**
+     * Get token url
+     * @param string $code
+     * @return string
+     */
+    protected function getTokenUrl($code) {
 		return parent::getTokenUrl($code) . '&redirect_uri=' . urlencode($this->getState('redirect_uri'));
 	}
 
-	protected function getAccessToken($code) {
+    /**
+     * Get Access Token from response
+     * @param string $code
+     * @return string
+     */
+    protected function getAccessToken($code) {
 		$response = $this->makeRequest($this->getTokenUrl($code), array(), false);
+        if($result = $this->tokenFromJson($response)){
+            return $result;
+        }
 		parse_str($response, $result);
 		return $result;
 	}
 
+    /**
+     * Get the token from json if valid json provided
+     * @param string $token
+     * @return mixed
+     */
+    protected function tokenFromJson($token){
+        return json_decode($token);
+    }
 	/**
 	 * Save access token to the session.
 	 *
